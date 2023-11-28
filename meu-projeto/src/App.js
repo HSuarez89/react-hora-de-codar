@@ -1,4 +1,7 @@
 import './App.css';
+import './components/HelloWorld.js';
+import HelloWorld from './components/HelloWorld';
+import Frase from './components/Frase.js';
 
 function App() {
   const name = 'Henrique'
@@ -14,6 +17,7 @@ function App() {
         <p>Olá, {newName}!</p>
         <p>Soma: {sum(1, 2)}</p>
         <img src={url} alt= 'Minha imagem'/>
+        <HelloWorld />
     </div>
   );
 }
