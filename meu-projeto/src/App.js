@@ -34,8 +34,14 @@ function App() {
         />
         <PessoaEstruturado
           nome="Yete Suarez Siqueira"
-          idade="67"
+          idade="66"
           profissao="Dentista"
+          foto="https://via.placeholder.com/150"
+        />
+        <PessoaEstruturado
+          nome="Marcelo"
+          idade='24'
+          profissao="Piloto da Latam"
           foto="https://via.placeholder.com/150"
         />
     </div>
