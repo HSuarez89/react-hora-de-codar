@@ -5,6 +5,7 @@ import Frase from './components/Frase.js';
 import SayMyName from './components/SayMyName.js';
 import Pessoa from './components/Pessoa.js';
 import PessoaEstruturado from './components/PessoaEstruturado.js';
+import List from './components/List.js'
 
 function App() {
   const name = 'Henrique'
@@ -44,6 +45,7 @@ function App() {
           profissao="Piloto da Latam"
           foto="https://via.placeholder.com/150"
         />
+        <List />
     </div>
   );
 }
