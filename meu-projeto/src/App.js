@@ -6,6 +6,8 @@ import SayMyName from './components/SayMyName.js';
 import Pessoa from './components/Pessoa.js';
 import PessoaEstruturado from './components/PessoaEstruturado.js';
 import List from './components/List.js'
+import Evento from './components/Evento.js';
+import Form from './components/Form.js';
 
 function App() {
   const name = 'Henrique'
@@ -46,6 +48,9 @@ function App() {
           foto="https://via.placeholder.com/150"
         />
         <List />
+        <h1>Eventos</h1>
+        <Evento />
+        <Form />
     </div>
   );
 }
