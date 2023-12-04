@@ -51,6 +51,7 @@ function App() {
         <h1>Eventos</h1>
         <Evento />
         <Form />
+        <h1>Eventos por props</h1>
     </div>
   );
 }
