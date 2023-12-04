@@ -8,6 +8,7 @@ import PessoaEstruturado from './components/PessoaEstruturado.js';
 import List from './components/List.js'
 import Evento from './components/Evento.js';
 import Form from './components/Form.js';
+import EventoProps from './components/eventosProps/EventoProps.js';
 
 function App() {
   const name = 'Henrique'
@@ -52,6 +53,7 @@ function App() {
         <Evento />
         <Form />
         <h1>Eventos por props</h1>
+        <EventoProps/>
     </div>
   );
 }
