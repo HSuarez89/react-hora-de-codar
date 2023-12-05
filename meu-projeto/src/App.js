@@ -9,6 +9,7 @@ import List from './components/List.js'
 import Evento from './components/Evento.js';
 import Form from './components/Form.js';
 import EventoProps from './components/eventosProps/EventoProps.js';
+import Condicional from './components/Condicional.js';
 
 function App() {
   const name = 'Henrique'
@@ -54,6 +55,8 @@ function App() {
         <Form />
         <h1>Eventos por props</h1>
         <EventoProps/>
+        <h1>Renderização Condicional</h1>
+        <Condicional/>
     </div>
   );
 }
