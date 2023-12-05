@@ -10,6 +10,7 @@ import Evento from './components/Evento.js';
 import Form from './components/Form.js';
 import EventoProps from './components/eventosProps/EventoProps.js';
 import Condicional from './components/Condicional.js';
+import OutraLista from './components/OutraLista.js';
 
 function App() {
   const name = 'Henrique'
@@ -18,6 +19,7 @@ function App() {
   function sum(a, b){
     return a + b
   }
+  const meusItens = ['React', 'Vue', 'Angular']
   const url = "https://via.placeholder.com/150"
   return (
     <div className="App">
@@ -57,6 +59,9 @@ function App() {
         <EventoProps/>
         <h1>Renderização Condicional</h1>
         <Condicional/>
+        <h1>Renderização de listas</h1>
+        <OutraLista itens={meusItens}/>
+        <OutraLista itens={''}/>
     </div>
   );
 }
