@@ -11,11 +11,15 @@ import Form from './components/Form.js';
 import EventoProps from './components/eventosProps/EventoProps.js';
 import Condicional from './components/Condicional.js';
 import OutraLista from './components/OutraLista.js';
+import { useState } from 'react';
+import SeuNome from './components/SeuNome.js';
+import Saudacao from './components/Saudacao.js';
 
 function App() {
   const name = 'Henrique'
   const newName = name.toUpperCase()
   const nome = "José"
+  const [nomes, setNomes] = useState()
   function sum(a, b){
     return a + b
   }
@@ -62,6 +66,10 @@ function App() {
         <h1>Renderização de listas</h1>
         <OutraLista itens={meusItens}/>
         <OutraLista itens={''}/>
+        <h1>State Lift</h1>
+        <p>A variável do useState está no App.js e não no componente.</p>
+        <SeuNome setNomes={setNomes}/>
+        <Saudacao nomes={nomes} />
     </div>
   );
 }
