@@ -17,12 +17,14 @@ function App() {
           <li><Link to='/empresa'>Empresa</Link></li>
           <li><Link to='/novoprojeto'>Novo Projeto</Link></li>
         </ul>
-          <Routes>
-            <Route exact path='/' element={<Home />}/>
-            <Route path='/empresa' element={<Empresa />}/>
-            <Route path='/Contato' element={<Contato />}/>
-            <Route path='/novoprojeto' element={<NovoProjeto />}/>
-          </Routes>
+            <Routes>
+              <Route element={<Container customClass='min-height'/>}>
+                <Route exact path='/' element={<Home />} />
+                <Route path='/empresa' element={<Empresa />}/>
+                <Route path='/Contato' element={<Contato />}/>
+                <Route path='/novoprojeto' element={<NovoProjeto />}/>
+              </Route>
+            </Routes>
       <p>Footer</p>
       </Router>
     </div>
