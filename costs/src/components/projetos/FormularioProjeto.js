@@ -12,7 +12,7 @@ function FormularioProjeto({handleSubmit, btnText, dadosProjeto}){
         fetch('http://localhost:5000/categorias', {
         method: 'GET',
         headers: {
-            'Content-Type': 'application.json',
+            'Content-Type': 'application/json',
         },
     })
     .then((resp) => resp.json())

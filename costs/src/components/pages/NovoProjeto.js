@@ -11,7 +11,7 @@ function NovoProjeto(){
 
         fetch('http://localhost:5000/projetos', {
             method: "POST",
-            headers: {'content-Type': 'application.json'},
+            headers: {'content-Type': 'application/json'},
             body: JSON.stringify(projeto)
         }).then((resp) => resp.json())
         .then((data) => console.log(data),
