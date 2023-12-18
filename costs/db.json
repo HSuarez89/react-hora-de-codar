@@ -1,49 +1,6 @@
 {
   "projetos": [
-    {
-      "name": "teste",
-      "orcamento": "123",
-      "categoria": {
-        "id": "3",
-        "nome": "Design"
-      },
-      "cost": 0,
-      "servicos": [],
-      "id": 1
-    },
-    {
-      "name": "teste",
-      "orcamento": "123",
-      "categoria": {
-        "id": "2",
-        "nome": "Desenvolvimento"
-      },
-      "cost": 0,
-      "servicos": [],
-      "id": 2
-    },
-    {
-      "name": "teste123",
-      "orcamento": "5000",
-      "categoria": {
-        "id": "1",
-        "nome": "Infra"
-      },
-      "cost": 0,
-      "servicos": [],
-      "id": 3
-    },
-    {
-      "name": "teste5",
-      "orcamento": "4000",
-      "categoria": {
-        "id": "1",
-        "nome": "Infra"
-      },
-      "cost": 0,
-      "servicos": [],
-      "id": 4
-    }
+
   ],
   "categorias": [
     {
