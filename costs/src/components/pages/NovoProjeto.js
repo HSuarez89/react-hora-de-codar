@@ -14,8 +14,8 @@ function NovoProjeto(){
             headers: {'content-Type': 'application/json'},
             body: JSON.stringify(projeto)
         }).then((resp) => resp.json())
-        .then((data) => console.log(data),
-        navigate('/projetos', {mensagem: 'Projeto criado com sucesso!'}))
+        .then((data) => {console.log(data);
+        navigate('/projetos', {state: {mensagem: 'Projeto criado com sucesso!'}})})
         .catch((err) => console.log(err))
     }
     return (

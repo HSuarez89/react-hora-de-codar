@@ -1,16 +1,16 @@
-import {useSearchParams} from 'react-router-dom'
+import { useLocation } from "react-router-dom"
 import Mensagem from "../layout/Mensagem"
 
 function Projetos(){
-    const [parametros] = useSearchParams()
+    const location = useLocation()
     let mensagem = ''
-    if(parametros.state) {
-        mensagem = parametros.state.mensagem
+    if(location.state){
+        mensagem = location.state.mensagem
     }
     return(
         <div>
             <h1>Meus Projetos</h1>
-            {mensagem && <Mensagem type={'sucesso'} msg={mensagem} />}
+            {mensagem && <Mensagem type='sucesso' msg={mensagem} />}
         </div>
         
     )

@@ -12,13 +12,13 @@ function Mensagem({type, msg}){
         const timer = setTimeout(() => {
             setVisivel(false)
         }, 3000)
-        return () => clearTimeout(timer)
+        return () => {clearTimeout(timer)}
     }, [msg])
     return(
         <>
         {visivel && (
             <div className={`${styles.mensagem} ${styles[type]}`}>
-                <p>{msg}</p>
+                {msg}
             </div>
         )}
         </>
