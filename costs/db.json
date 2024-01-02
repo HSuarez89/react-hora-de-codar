@@ -2,41 +2,21 @@
   "projetos": [
     {
       "name": "Teste 1",
-      "orcamento": "100",
+      "orcamento": "6000",
       "categoria": {
-        "id": "1",
-        "nome": "Infra"
+        "id": "3",
+        "nome": "Design"
       },
-      "cost": 0,
-      "servicos": [],
-      "id": 1
-    },
-    {
-      "name": "Teste 2",
-      "orcamento": "1000",
-      "categoria": {
-        "id": "4",
-        "nome": "Planejamento"
-      },
-      "cost": 1000,
+      "cost": 4000,
       "servicos": [
         {
-          "name": "Novo serviço",
-          "cost": "500",
-          "desc": "Novo Serviço"
-        },
-        {
-          "name": "Novo serviço 2",
-          "cost": "500",
-          "desc": "Novo Serviço"
-        },
-        {
-          "name": "Serviço 3",
-          "cost": "0",
-          "desc": "Teste"
+          "name": "Contratar Carolav",
+          "cost": "4000",
+          "desc": "Contratar essa brilhante publicitária.",
+          "id": "a5b55114-9c5e-4012-965c-9780381e290b"
         }
       ],
-      "id": 3
+      "id": 1
     }
   ],
   "categorias": [

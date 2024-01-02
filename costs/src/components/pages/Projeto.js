@@ -58,7 +58,7 @@ function Projeto(){
         function criarServico(projeto){
             setMensagem('')
             const ultimoServico = projeto.servicos[projeto.servicos.length - 1]
-            ultimoServico.id = uuidv4
+            ultimoServico.id = uuidv4()
             const custoUltimoServico = ultimoServico.cost
             const novoCusto = parseFloat(projeto.cost) + parseFloat(custoUltimoServico)
 
@@ -82,8 +82,25 @@ function Projeto(){
             .catch((err) => console.log(err))
         }
 
-        function removeServico(){
-
+        function removeServico(id, cost){
+            const atualizacaoServicos = projeto.servicos.filter(
+                (servico) => servico.id !== id
+            )
+            const projetoAtualizado = projeto
+            projetoAtualizado.servicos = atualizacaoServicos 
+            projetoAtualizado.cost = parseFloat(projetoAtualizado.cost) - parseFloat(cost)
+            fetch(`http://localhost:5000/projetos/${projetoAtualizado.id}`,{
+                method: 'PATCH',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(projetoAtualizado)
+            }).then((resp) => resp.json())
+            .then((data) => {
+                setProjeto(projetoAtualizado)
+                setServicos(atualizacaoServicos)
+                setMensagem('Serviço removido com sucesso')
+                setTipo('sucesso')
+            })
+            .catch((err) => console.log(err))
         }
 
         function chamaFormularioProjeto(){
@@ -148,11 +165,11 @@ function Projeto(){
                                         cost={servico.cost}
                                         desc={servico.desc}
                                         key={servico.id}
-                                        handleremove={removeServico}
+                                        handleRemove={removeServico}
                                     />
                                 ))
                             }
-                            {servicos.legth === 0 && <p>Não há serviços cadastrados!</p>}
+                            {servicos.length === 0 && <p>Não há serviços cadastrados!</p>}
                         </Container>
                     </Container>
                 </div>
