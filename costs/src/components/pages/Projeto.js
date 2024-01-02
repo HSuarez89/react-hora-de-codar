@@ -1,4 +1,4 @@
-import {parse, v4 as uuidv4} from 'uuid'
+import {v4 as uuidv4} from 'uuid'
 import styles from './Projeto.module.css'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
@@ -7,6 +7,7 @@ import Container from '../layout/Container'
 import FormularioProjeto from '../projetos/FormularioProjeto'
 import Mensagem from '../layout/Mensagem'
 import FormularioServico from '../servicos/FormularioServico'
+import CardServico from '../servicos/CardServico'
 
 function Projeto(){
     const { id } = useParams()
@@ -15,6 +16,7 @@ function Projeto(){
     const [mostraFormularioServico, setMostraFormularioServico] = useState(false)
     const [mensagem, setMensagem] = useState()
     const [tipo, setTipo] = useState()
+    const [servicos, setServicos] = useState([])
 
     useEffect(() => {
         setTimeout(() => {
@@ -26,6 +28,7 @@ function Projeto(){
             }).then((resp) => resp.json())
             .then((data) => {
                 setProjeto(data)
+                setServicos(data.servicos)
             })
             .catch((err) => console.log(err))
             }, 1000)
@@ -58,6 +61,7 @@ function Projeto(){
             ultimoServico.id = uuidv4
             const custoUltimoServico = ultimoServico.cost
             const novoCusto = parseFloat(projeto.cost) + parseFloat(custoUltimoServico)
+
             if(novoCusto > parseFloat(projeto.orcamento)){
                 setMensagem('Orçamento insuficiente. Verifique os valores dos serviços.')
                 setTipo('erro')
@@ -73,9 +77,13 @@ function Projeto(){
                 body: JSON.stringify(projeto)
             }).then((resp) => resp.json())
             .then((data) => {
-                console.log(data)
+                setMostraFormularioServico(false)
             })
             .catch((err) => console.log(err))
+        }
+
+        function removeServico(){
+
         }
 
         function chamaFormularioProjeto(){
@@ -132,7 +140,19 @@ function Projeto(){
                         </div>
                         <h2>Serviços:</h2>
                         <Container customClass='start'>
-                            <p>Itens dos serviços</p>
+                            {servicos.length > 0 &&
+                                servicos.map((servico) => (
+                                    <CardServico 
+                                        id={servico.id}
+                                        name={servico.name}
+                                        cost={servico.cost}
+                                        desc={servico.desc}
+                                        key={servico.id}
+                                        handleremove={removeServico}
+                                    />
+                                ))
+                            }
+                            {servicos.legth === 0 && <p>Não há serviços cadastrados!</p>}
                         </Container>
                     </Container>
                 </div>

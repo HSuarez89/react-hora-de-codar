@@ -29,6 +29,11 @@
           "name": "Novo serviço 2",
           "cost": "500",
           "desc": "Novo Serviço"
+        },
+        {
+          "name": "Serviço 3",
+          "cost": "0",
+          "desc": "Teste"
         }
       ],
       "id": 3
