@@ -12,15 +12,15 @@
       "id": 1
     },
     {
-      "name": "Teste 2",
-      "orcamento": "1000",
+      "name": "Eu amo Saymon",
+      "orcamento": "1000000000",
       "categoria": {
-        "id": "2",
-        "nome": "Desenvolvimento"
+        "id": "1",
+        "nome": "Infra"
       },
       "cost": 0,
       "servicos": [],
-      "id": 2
+      "id": 3
     }
   ],
   "categorias": [
