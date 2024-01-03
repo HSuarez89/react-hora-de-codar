@@ -25,7 +25,7 @@ function App() {
                 <Route path='/projeto/:id' element={<Projeto />}/>
               </Route>
             </Routes>
-      <Footer />
+        <Footer />
       </Router>
     </div>
   );
